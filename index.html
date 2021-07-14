@@ -1,6 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="refresh" content="0; URL=https://github.com/justingdps/justingdps" />
+	<title>JustinGDPS</title>
+	<meta property="og:title" content="JustinGDPS" />
+	<meta property="og:description" content="Where ideas come to life" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "Segoe UI", Arial, sans-serif;
+		}
+
+		body {
+			background-color: #0b1d24;
+		}
+
+		nav {
+			background-color: #01131a;
+			width: 100%;
+			height: 60px;
+		}
+
+		nav p {
+			color: white;
+			font-size: 24px;
+			line-height: 55px;
+			float: left;
+			padding: 0px 20px;
+		}
+
+		nav ul {
+			float: left;
+		}
+
+		nav ul li {
+			float: left;
+			list-style: none;
+			position: relative;
+		}
+
+		nav ul li a {
+			display: block;
+			color: white;
+			font-size: 14px;
+			padding: 20px 14px;
+			text-decoration: none;
+		}
+
+		nav ul li ul {
+			display: none;
+			position: absolute;
+			background-color: #01131a;
+			padding: 10px;
+			border-radius: 0px 0px 4px 4px;
+		}
+
+		nav ul li:hover ul {
+			display: block;
+		}
+
+		nav ul li ul li {
+			width: 180px;
+			border-radius: 4px;
+		}
+
+		nav ul li ul li a {
+			padding: 8px 14px;
+		}
+
+		nav ul li ul li a:hover {
+			background-color: #00070e;
+		}
+
+		.jgdps-logo {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.bg-header {
+			font-size: 100px;
+			color: white;
+			display: block;
+			text-align: center;
+		}
+
+		.bg-text {
+			font-size: 30px;
+			color: white;
+			display: block;
+			text-align: center;
+		}
+
+		.fade-in {
+			opacity: 0;
+			transform: translateY(10px);
+			transition: opacity 750ms ease-in, transform 750ms ease-in;
+		}
+
+		.fade-in.appear {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	</style>
 </head>
+<body>
+	<nav>
+		<p>JustinGDPS</p>
+		<ul>
+			<li><a href="#">Download</a>
+				<ul>
+					<li><a href="https://drive.google.com/file/d/1KS-WFLFLdnFNFjYKOVO0N8bTOC0nPMcq/view?usp=sharing">Windows Installer<br>(.exe)</a></li>
+					<li><a href="https://drive.google.com/file/d/1SzFZO7LTRtQH0fe_RRf-ooqrEPY17QTM/view?usp=sharing">Windows GDPS<br>(.zip)</a></li>
+					<li><a href="https://drive.google.com/file/d/11W7HF6HcCuUjpGTvWWyKzbSg8YiW7q9e/view?usp=sharing">Android GDPS<br>(.apk)</a></li>
+				</ul>
+			</li>
+			<li><a href="dashboard">Dashboard</a></li>
+			<li><a href="tools">Tools</a></li>
+			<li><a href="https://github.com/justingdps">GitHub</a></li>
+			<li><a href="https://discord.gg/KjX93dcYEM">Discord</a></li>
+		</ul>
+	</nav>
+
+	<img class="jgdps-logo fade-in" src="jgdps-modern.png" alt="JustinGDPS">
+	<h1 class="bg-header fade-in">JustinGDPS</h1>
+	<p class="bg-text fade-in">Where ideas come to life</p>
+	<script>
+		const faders = document.querySelectorAll(".fade-in");
+		const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+			for (const entry of entries) {
+				entry.target.classList.add('appear');
+				appearOnScroll.unobserve(entry.target);
+			}
+		});
+
+		for (const fader of faders)
+			appearOnScroll.observe(fader);
+	</script>
+</body>
 </html>
